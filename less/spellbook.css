@@ -1,0 +1,58 @@
+/* defines */
+/* Actual classes */
+body {
+  background-color: #ecf0f1;
+}
+#wrapper {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.spell-level {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+}
+@media (min-width: 420px) {
+  #wrapper {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .spell-level {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 400px;
+  }
+}
+.spell-level {
+  color: #130f30;
+  vertical-align: top;
+  display: inline-block;
+}
+.spell-level ol {
+  padding: 0;
+  list-style-type: none;
+}
+.spell-level ol li {
+  background-color: #b0d8e0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #8eb6be;
+  width: 100%;
+  display: block;
+  padding: 5px 10px 5px 10px;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.spell-level ol li a {
+  color: #285058;
+  text-decoration: none;
+}
+.spell-level ol li dl {
+  margin: 0;
+}
+.spell-level ol li dl dd {
+  display: none;
+}

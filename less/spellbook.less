@@ -1,0 +1,92 @@
+
+@import "bootstrap/variables.less";
+
+/* defines */
+
+@offblack: #130f30;
+@offwhite: #ecf0f1;
+@lightblue: #b0d8e0;
+@darkblue: @lightblue - #222;
+@darkerblue: @lightblue - #444;
+@darkestblue: @lightblue - #888;
+
+@column-width: 400px;
+@column-margin: 10px;
+@column-min-width: (@column-width + (2 * @column-margin));
+@column-max-width: @column-min-width;
+
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+
+/* Actual classes */
+
+body {
+  background-color: @offwhite;
+}
+
+#wrapper {
+  margin-left: @column-margin;
+  margin-right: @column-margin;
+}
+
+.spell-level {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+}
+
+// if the window is wide enough, the columns will pad themselves
+@media (min-width: @column-min-width) {
+  #wrapper {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .spell-level {
+    margin-left: @column-margin;
+    margin-right: @column-margin;
+    width: @column-width;
+  }
+}
+
+.spell-level {
+  color: @offblack;
+  vertical-align: top;
+  display: inline-block;
+
+  ol {
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      background-color: @lightblue;
+      .rounded-corners;
+      border: 1px solid @darkblue;
+
+      width: 100%;
+      display: block;
+      padding: 5px 10px 5px 10px;
+      margin-top: 5px;
+      margin-bottom: 0;
+
+      a {
+        color: @darkestblue;
+        text-decoration: none;
+      }
+
+      dl {
+        margin: 0;
+
+        dd {
+          display: none;
+        }
+      }
+    }
+  }
+}
