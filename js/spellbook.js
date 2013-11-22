@@ -3,18 +3,16 @@ var SpellBook = function (options) {
     var select = options.selector;
 
     var collapse = function (e) {
-        console.log("collapse");
-        var elements = $(this).find(".content");
-        var content = $(elements[0]);
-        content.slideUp();
+        $(this).find(".content").slideUp();
+        $(this).find(".icon-expand").show();
+        $(this).find(".icon-collapse").hide();
         $(this).unbind('click').click(expand);
     }
 
     var expand = function (e) {
-        console.log("expand");
-        var elements = $(this).find(".content");
-        var content = $(elements[0]);
-        content.slideDown();
+        $(this).find(".content").slideDown();
+        $(this).find(".icon-expand").hide();
+        $(this).find(".icon-collapse").show();
         $(this).unbind('click').click(collapse);
     }
 

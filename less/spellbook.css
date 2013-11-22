@@ -48,9 +48,17 @@ body {
   margin-top: 5px;
   margin-bottom: 0;
 }
-.spell-level ol li a {
+.spell-level ol li div.header {
   color: #285058;
-  text-decoration: none;
+}
+.spell-level ol li div.header span.icon-expand,
+.spell-level ol li div.header span.icon-collapse {
+  float: right;
+  padding-top: 3px;
+  color: #6c949c;
+}
+.spell-level ol li div.header span.icon-collapse {
+  display: none;
 }
 .spell-level ol li div.content {
   display: none;

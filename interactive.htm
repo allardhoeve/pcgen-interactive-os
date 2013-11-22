@@ -62,11 +62,9 @@
                             <li class="spell">
                                 <dl>
                                     <div class="header">
-                                    |IIF(TEXT.LENGTH.SPELLMEM.%class.%spellbook.%level.%spell.SOURCELINK:0)|
+                                        <span class="icon-expand glyphicon glyphicon-chevron-down"></span>
+                                        <span class="icon-collapse glyphicon glyphicon-chevron-up"></span>
                                         <dt>|SPELLMEM.%class.%spellbook.%level.%spell.NAME|</dt>
-                                    |ELSE|
-                                        <a href="|SPELLMEM.%class.%spellbook.%level.%spell.SOURCELINK|">|SPELLMEM.%class.%spellbook.%level.%spell.NAME|</a>
-                                    |ENDIF|
                                     </div>
                                     <div class="content">
                                         <!-- TODO: empty DC should list 'None' -->

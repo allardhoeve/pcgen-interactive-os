@@ -77,9 +77,18 @@ body {
       margin-top: 5px;
       margin-bottom: 0;
 
-      a {
+      div.header {
         color: @darkestblue;
-        text-decoration: none;
+
+        span.icon-expand, span.icon-collapse {
+          float: right;
+          padding-top: 3px;
+          color: @darkerblue;
+        }
+
+        span.icon-collapse {
+          display: none;
+        }
       }
 
       div.content {
