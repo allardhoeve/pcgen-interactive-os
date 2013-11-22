@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text-html; charset=utf-8" />
+<title>Spellbook for |NAME|</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="file:///Users/allard/pcgen/pcgen-miniprojects/outputsheets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="file:///Users/allard/pcgen/pcgen-miniprojects/outputsheets/css/spellbook.css">
+    <script src="file:///Users/allard/pcgen/pcgen-miniprojects/outputsheets/js/jquery-2.0.3.min.js"></script>
+    <script src="file:///Users/allard/pcgen/pcgen-miniprojects/outputsheets/js/bootstrap.min.js"></script>
+    <script src="file:///Users/allard/pcgen/pcgen-miniprojects/outputsheets/js/spellbook.js"></script>
+</head>
+<body>
+
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">A</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand">Saenvan</span>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+            |FOR,%spellbook,0,0,1,0|
+                |FOR,%class,COUNT[SPELLRACE],COUNT[SPELLRACE]+COUNT[CLASSES]-1,1,1|
+                    |%SPELLLISTCLASS.%class|
+                        |FOR,%level,0,MAXSPELLLEVEL.%class,1,1|
+                            |FOR,%spellcount,COUNT[SPELLSINBOOK.%class.%spellbook.%level],COUNT[SPELLSINBOOK.%class.%spellbook.%level],1,0|
+                                |IIF(%spellcount:0)|
+                                <!-- No level %level spells //-->
+                                |ELSE|
+                                <li><a href="#level-%level-spells">%level</a></li>
+                                |ENDIF|
+                            |ENDFOR|
+                        |ENDFOR|
+                    |%|
+                |ENDFOR|
+            |ENDFOR|
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+
+<div id="spell-wrapper">
+|FOR,%spellbook,0,0,1,0|
+    |FOR,%class,COUNT[SPELLRACE],COUNT[SPELLRACE]+COUNT[CLASSES]-1,1,1|
+        |%SPELLLISTCLASS.%class|
+            |FOR,%level,0,MAXSPELLLEVEL.%class,1,1|
+                <div class="spell-level" name="level-%level-spells" id="level-%level-spells">
+                |FOR,%spellcount,COUNT[SPELLSINBOOK.%class.%spellbook.%level],COUNT[SPELLSINBOOK.%class.%spellbook.%level],1,0|
+                    |IIF(%spellcount:0)|
+                    <!-- No level %level spells //-->
+                    |ELSE|
+                    <h2>Level %level</h2>
+                        <ol>
+                        |FOR,%spell,0,COUNT[SPELLSINBOOK.%class.%spellbook.%level]-1,1,0|
+                            <li class="spell">
+                                <dl>
+                                    <div class="header">
+                                    |IIF(TEXT.LENGTH.SPELLMEM.%class.%spellbook.%level.%spell.SOURCELINK:0)|
+                                        <dt>|SPELLMEM.%class.%spellbook.%level.%spell.NAME|</dt>
+                                    |ELSE|
+                                        <a href="|SPELLMEM.%class.%spellbook.%level.%spell.SOURCELINK|">|SPELLMEM.%class.%spellbook.%level.%spell.NAME|</a>
+                                    |ENDIF|
+                                    </div>
+                                    <div class="content">
+                                        <!-- TODO: empty DC should list 'None' -->
+                                        <dd class="dc">DC: |SPELLMEM.%class.%spellbook.%level.%spell.DC|</dd>
+                                        <dd class="save">Save: |SPELLMEM.%class.%spellbook.%level.%spell.SAVEINFO|</dd>
+                                        <dd class="time">Time: |SPELLMEM.%class.%spellbook.%level.%spell.CASTINGTIME|</dd>
+                                        <dd class="duration">Duration: |SPELLMEM.%class.%spellbook.%level.%spell.DURATION|</dd>
+                                        <dd class="range">Range: |SPELLMEM.%class.%spellbook.%level.%spell.RANGE|</dd>
+                                        <dd class="components">Comp: |SPELLMEM.%class.%spellbook.%level.%spell.COMPONENTS|</dd>
+                                        <dd class="sr">SR: |SPELLMEM.%class.%spellbook.%level.%spell.SR|</dd>
+                                        <dd class="school">School: |SPELLMEM.%class.%spellbook.%level.%spell.SCHOOL|</dd>
+                                        <dd class="casterlevel">CL: |SPELLMEM.%class.%spellbook.%level.%spell.CASTERLEVEL|</dd>
+                                        <dd class="target">Target: |SPELLMEM.%class.%spellbook.%level.%spell.TARGET|</dd>
+                                        <dd class="effect">Effect: |SPELLMEM.%class.%spellbook.%level.%spell.EFFECT|</dd>
+                                    </div>
+                                </dl>
+                            </li>
+                        |ENDFOR|
+                        </ol>
+                    |ENDIF|
+                |ENDFOR|
+                </div>
+            |ENDFOR|
+        |%|
+    |ENDFOR|
+|ENDFOR|
+</div>
+
+<script>
+    $(document).ready(function () {
+        var spellbook = new SpellBook({selector: ".spell"});
+    });
+</script>
+
+</body>
+</html>
+
+
+<!--
+                            |IIF(SPELLMEM.%class.%spellbook.%level.%spell.SAVEINFO:None)|
+                            |ELSE|
+                                |IIF(SPELLMEM.%class.%spellbook.%level.%spell.RANGE:Personal)|
+                                |ELSE|
+                                    <i>DC:</i> |SPELLMEM.%class.%spellbook.%level.%spell.DC|<br />
+                                |ENDIF|
+                            |ENDIF|
+//-->

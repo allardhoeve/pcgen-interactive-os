@@ -3,7 +3,7 @@
 body {
   background-color: #ecf0f1;
 }
-#wrapper {
+#spell-wrapper {
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -13,13 +13,14 @@ body {
   width: 100%;
 }
 @media (min-width: 420px) {
-  #wrapper {
+  #spell-wrapper {
     margin-left: 0px;
     margin-right: 0px;
   }
   .spell-level {
     margin-left: 10px;
     margin-right: 10px;
+    padding-top: 60px;
     width: 400px;
   }
 }
@@ -50,9 +51,11 @@ body {
   color: #285058;
   text-decoration: none;
 }
+.spell-level ol li div.content {
+  display: none;
+  margin-top: 10px;
+  margin-left: 10px;
+}
 .spell-level ol li dl {
   margin: 0;
-}
-.spell-level ol li dl dd {
-  display: none;
 }

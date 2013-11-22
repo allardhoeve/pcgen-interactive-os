@@ -30,7 +30,7 @@ body {
   background-color: @offwhite;
 }
 
-#wrapper {
+#spell-wrapper {
   margin-left: @column-margin;
   margin-right: @column-margin;
 }
@@ -43,7 +43,7 @@ body {
 
 // if the window is wide enough, the columns will pad themselves
 @media (min-width: @column-min-width) {
-  #wrapper {
+  #spell-wrapper {
     margin-left: 0px;
     margin-right: 0px;
   }
@@ -51,6 +51,7 @@ body {
   .spell-level {
     margin-left: @column-margin;
     margin-right: @column-margin;
+    padding-top: 60px;
     width: @column-width;
   }
 }
@@ -80,12 +81,14 @@ body {
         text-decoration: none;
       }
 
+      div.content {
+        display: none;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+
       dl {
         margin: 0;
-
-        dd {
-          display: none;
-        }
       }
     }
   }
