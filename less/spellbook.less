@@ -98,11 +98,27 @@ body {
       }
 
       div.content {
-        display: none;
         margin-top: 10px;
         margin-bottom: 5px;
         margin-left: 0px;
         overflow: hidden;
+        max-height: 500px; /* auto */
+
+        /* Use CSS transitions only on larger screens (that have more CPU available) */
+        @media (min-width: @screen-sm-max) {
+          &.content-slide {
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+          }
+        }
+
+        &.content-hidden {
+          max-height: 0px;
+          margin: 0;
+          padding: 0;
+        }
       }
 
       dl {

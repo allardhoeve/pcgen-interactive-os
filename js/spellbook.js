@@ -3,16 +3,14 @@ var SpellBook = function (options) {
     var select = options.selector;
 
     var collapse = function (e) {
-        $(this).find(".content").slideUp();
-        $(this).find(".icon-expand").show();
-        $(this).find(".icon-collapse").hide();
+        $(this).find(".content").addClass("content-hidden");
+        $(this).find(".icon-expand").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
         $(this).unbind('click').click(expand);
     }
 
     var expand = function (e) {
-        $(this).find(".content").slideDown();
-        $(this).find(".icon-expand").hide();
-        $(this).find(".icon-collapse").show();
+        $(this).find(".content").removeClass("content-hidden");
+        $(this).find(".icon-expand").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
         $(this).unbind('click').click(collapse);
     }
 
