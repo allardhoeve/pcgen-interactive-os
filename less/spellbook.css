@@ -76,10 +76,10 @@ body {
 }
 @media (min-width: 991px) {
   .spell-level ol li div.content.content-slide {
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
   }
 }
 .spell-level ol li div.content.content-hidden {
