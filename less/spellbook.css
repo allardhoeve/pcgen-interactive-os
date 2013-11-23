@@ -68,7 +68,8 @@ body {
 .spell-level ol li div.content {
   display: none;
   margin-top: 10px;
-  margin-left: 10px;
+  margin-bottom: 5px;
+  margin-left: 0px;
   overflow: hidden;
 }
 .spell-level ol li dl {
