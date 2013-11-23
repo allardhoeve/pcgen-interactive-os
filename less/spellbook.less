@@ -62,6 +62,12 @@ body {
   display: inline-block;
   padding-top: 40px;
 
+  div.container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
   ol {
     padding: 0;
     list-style-type: none;
@@ -95,10 +101,24 @@ body {
         display: none;
         margin-top: 10px;
         margin-left: 10px;
+        overflow: hidden;
       }
 
       dl {
         margin: 0;
+      }
+
+      dd {
+        display: inline;
+        margin-left: 5px;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+
+        .key {
+          font-weight: bold;
+        }
       }
     }
   }

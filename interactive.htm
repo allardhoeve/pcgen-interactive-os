@@ -56,7 +56,7 @@
                     |IIF(%spellcount:0)|
                     <!-- No level %level spells //-->
                     |ELSE|
-                    <h2>Level %level</h2>
+                    <h2>|SPELLLISTCLASS.%class| level %level</h2>
                         <ol>
                         |FOR,%spell,0,COUNT[SPELLSINBOOK.%class.%spellbook.%level]-1,1,0|
                             <li class="spell">
@@ -68,17 +68,66 @@
                                     </div>
                                     <div class="content">
                                         <!-- TODO: empty DC should list 'None' -->
-                                        <dd class="dc">DC: |SPELLMEM.%class.%spellbook.%level.%spell.DC|</dd>
-                                        <dd class="save">Save: |SPELLMEM.%class.%spellbook.%level.%spell.SAVEINFO|</dd>
-                                        <dd class="time">Time: |SPELLMEM.%class.%spellbook.%level.%spell.CASTINGTIME|</dd>
-                                        <dd class="duration">Duration: |SPELLMEM.%class.%spellbook.%level.%spell.DURATION|</dd>
-                                        <dd class="range">Range: |SPELLMEM.%class.%spellbook.%level.%spell.RANGE|</dd>
-                                        <dd class="components">Comp: |SPELLMEM.%class.%spellbook.%level.%spell.COMPONENTS|</dd>
-                                        <dd class="sr">SR: |SPELLMEM.%class.%spellbook.%level.%spell.SR|</dd>
-                                        <dd class="school">School: |SPELLMEM.%class.%spellbook.%level.%spell.SCHOOL|</dd>
-                                        <dd class="casterlevel">CL: |SPELLMEM.%class.%spellbook.%level.%spell.CASTERLEVEL|</dd>
-                                        <dd class="target">Target: |SPELLMEM.%class.%spellbook.%level.%spell.TARGET|</dd>
-                                        <dd class="effect">Effect: |SPELLMEM.%class.%spellbook.%level.%spell.EFFECT|</dd>
+                                        <div class="container">
+                                            <dd class="school">
+                                                <span class="key">School:</span>
+                                                |SPELLMEM.%class.%spellbook.%level.%spell.SCHOOL|
+                                            </dd>
+                                            <dd class="level">
+                                                <span class="key">Level:</span>
+                                                |SPELLLISTCLASS.%class| %level
+                                            </dd>
+                                        </div>
+                                        <div class="container">
+                                            <dd class="time">
+                                                <span class="key">Time:</span>
+                                                |SPELLMEM.%class.%spellbook.%level.%spell.CASTINGTIME|
+                                            </dd>
+                                        </div>
+                                        <div class="container">
+                                            <dd class="components">
+                                                <span class="key">Comp:</span>
+                                                |SPELLMEM.%class.%spellbook.%level.%spell.COMPONENTS|
+                                            </dd>
+                                        </div>
+                                        <div class="container">
+                                            <dd class="range">
+                                                <span class="key">Range:</span>
+                                                |SPELLMEM.%class.%spellbook.%level.%spell.RANGE|
+                                            </dd>
+                                        </div>
+                                        <div class="container">
+                                            <dd class="target">
+                                                <span class="key">Target:</span>
+                                                |SPELLMEM.%class.%spellbook.%level.%spell.TARGET|
+                                            </dd>
+                                        </div>
+                                        <div class="container">
+                                            <dd class="duration">
+                                                <span class="key">Duration:</span>
+                                                |SPELLMEM.%class.%spellbook.%level.%spell.DURATION|
+                                            </dd>
+                                        </div>
+                                        <div class="container">
+                                            <dd class="save">
+                                                <span class="key">Save:</span>
+                                                |SPELLMEM.%class.%spellbook.%level.%spell.SAVEINFO| (DC |SPELLMEM.%class.%spellbook.%level.%spell.DC|)
+                                            </dd>
+                                            <dd class="sr">
+                                                <span class="key">SR:</span>
+                                                |SPELLMEM.%class.%spellbook.%level.%spell.SR|
+                                            </dd>
+                                            <dd class="casterlevel">
+                                                <span class="key">CL:</span>
+                                                |SPELLMEM.%class.%spellbook.%level.%spell.CASTERLEVEL|
+                                            </dd>
+                                        </div>
+                                        <div class="container">
+                                            <dd class="effect">
+                                                <span class="key">Effect:</span>
+                                                |SPELLMEM.%class.%spellbook.%level.%spell.EFFECT|
+                                            </dd>
+                                        </div>
                                     </div>
                                 </dl>
                             </li>
