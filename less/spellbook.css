@@ -3,6 +3,9 @@
 body {
   background-color: #ecf0f1;
 }
+.navbar li:hover {
+  background-color: #b0d8e0;
+}
 #spell-wrapper {
   margin-left: 10px;
   margin-right: 10px;
