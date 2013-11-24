@@ -9,8 +9,8 @@ This is an attempt to create a modern spell book sheet for PCGen characters.
 ## How to use it
 
 Either:
-* Put interactive.htm in your PCGen folder, under `outputsheets/d20/fantasy/htmlxml`. Name it `csheet_interactive.htm`.
-* Or create a symlink from that location to `interactive.htm`.
+* Put csheet\_interactive.htm in your PCGen folder, under `outputsheets/d20/fantasy/htmlxml`.
+* Or create a symlink from that location.
 
 Then use PCGen to output a sheet. Put it in `spellbook.html`, so the JS and CSS requirements are met. 
 
@@ -23,6 +23,8 @@ This is a mixture of HTML and PCGen templating. Please see:
 
 * http://www.pcgen.org/autobuilds/pcgen-docs/ (click `Output Sheet Token Index` in the menu)
 * http://wiki.pcgen.org/Template_Engine
+
+NB: The templating engine in PCGen currently does not support white-space before `\||` tokens. Run `./filter-interactive.sh` after every edit. Or set a watcher on the file in PyCharm or your favorite editor.
 
 
 ## How to edit the CSS
