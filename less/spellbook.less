@@ -69,6 +69,14 @@ span.search-clear {
   }
 }
 
+// if the window is too small, make sure the navbar is not on top of
+// filtered results
+@media (max-width: @column-min-width) {
+  .search-filtered {
+    padding-top: 60px;
+  }
+}
+
 // if the window is wide enough, the columns will pad themselves
 @media (min-width: @column-min-width) {
   #spell-wrapper {

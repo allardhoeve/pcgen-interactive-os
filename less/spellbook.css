@@ -35,6 +35,11 @@ span.search-clear span {
 span.search-clear input {
   padding-right: 30px;
 }
+@media (max-width: 420px) {
+  .search-filtered {
+    padding-top: 60px;
+  }
+}
 @media (min-width: 420px) {
   #spell-wrapper {
     margin-left: 0px;

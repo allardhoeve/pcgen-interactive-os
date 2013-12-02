@@ -37,14 +37,19 @@ var SearchBar = function (options) {
         return $($(searchFieldSelector).get(0));
     };
 
+    var clearSearch = function () {
+        $("#spell-wrapper").removeClass("search-filtered");
+        $(document).find("li.spell").removeClass("search-show");
+    };
+
     // Event handler for form elements
     var performSearch = function(e) {
         e.preventDefault();
         var input = getSearchField();
+        $('.navbar-collapse').collapse('hide');
 
         if (input.val() == '') {
-            $("#spell-wrapper").removeClass("search-filtered");
-            $(document).find("li.spell").removeClass("search-show");
+            clearSearch();
         }
         else {
             $("#spell-wrapper").addClass("search-filtered");
@@ -60,7 +65,7 @@ var SearchBar = function (options) {
         input.after($('<span class="search-close">x</span>'));
         input.parent().find(".search-close").click(function (e) {
             input.val('').focus();
-            performSearch(e);
+            clearSearch();
         });
     };
 
