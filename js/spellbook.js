@@ -1,5 +1,15 @@
 
 
+var collapsedNavbarCloser = function () {
+
+    var closeNavbarDropdown = function (e) {
+        $('.navbar-collapse').collapse('hide');
+    }
+
+    $('.navbar-collapse').find('a').click(closeNavbarDropdown)
+}
+
+
 var jQuerySelectors = function () {
     // http://css-tricks.com/snippets/jquery/make-jquery-contains-case-insensitive/
     jQuery.expr[':'].textMatches = function(a, i, m) {
