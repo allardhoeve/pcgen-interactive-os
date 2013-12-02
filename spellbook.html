@@ -16,12 +16,17 @@
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">A</span>
+                <span class="sr-only">Menu</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
             <span class="navbar-brand">Saenvan</span>
+            <form class="navbar-form navbar-left" role="search" id="spellsearch">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" id="searchfield"/>
+                </div>
+            </form>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -19972,6 +19977,8 @@ This spell creates a wall of rock that merges into adjoining rock surfaces.
 <script>
     $(document).ready(function () {
         var spellbook = new SpellBook({selector: ".spell"});
+        var searchbar = new SearchBar({selector: "#spellsearch"});
+        var selectors = new jQuerySelectors();
     });
 </script>
 </body>

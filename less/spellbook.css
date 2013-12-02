@@ -15,6 +15,26 @@ body {
   margin-right: 0px;
   width: 100%;
 }
+span.search-clear {
+  position: relative;
+}
+span.search-clear span {
+  position: absolute;
+  display: block;
+  top: -9px;
+  right: 6px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: .5;
+  padding-bottom: 6px;
+  padding-top: 6px;
+}
+span.search-clear input {
+  padding-right: 30px;
+}
 @media (min-width: 420px) {
   #spell-wrapper {
     margin-left: 0px;
@@ -32,6 +52,17 @@ body {
   vertical-align: top;
   display: inline-block;
   padding-top: 40px;
+}
+.search-filtered .spell-level {
+  padding-top: 0px;
+  display: block;
+}
+.search-filtered .spell-level h2 {
+  display: none;
+}
+.search-filtered .spell-level ol {
+  margin: 0;
+  padding: 0;
 }
 .spell-level div.container {
   margin: 0;
@@ -67,6 +98,12 @@ body {
 }
 .spell-level ol li div.header span.icon-collapse {
   display: none;
+}
+.search-filtered .spell-level ol li {
+  display: none;
+}
+.search-filtered .spell-level ol li.search-show {
+  display: block;
 }
 .spell-level ol li div.content {
   margin-top: 10px;
